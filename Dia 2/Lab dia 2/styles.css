@@ -1,0 +1,18 @@
+
+body{
+    color:black;
+    background-color: pink;
+    border-width: 100px; 
+}
+
+
+p {
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+
+}
+
+div{
+    background: linear-gradient(to right, blue,green);
+}
