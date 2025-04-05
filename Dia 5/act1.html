@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <title>Click Button to Change Text</title>
+</head>
+<body>
+   
+    <button id="changeTextButton">Click here</button>
+
+    <div id="messageBox">Text will change when button is clicked</div>
+
+    <script>
+
+const button = document.getElementById('changeTextButton');
+const messageBox = document.getElementById('messageBox');
+
+button.addEventListener('click', function () {
+
+    messageBox.textContent = "This is a new text";
+});
+
+    </script>
+
+
+</body>
+</html>
