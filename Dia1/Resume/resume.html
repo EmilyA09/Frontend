@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+    <script>
+        function updateContactInfo() {
+            var emailInput = document.getElementById("email-input").value;
+            var phoneInput  = document.getElementById("phone-input").value;
+
+            document.getElementById("email-display").textContent = emailInput;
+            document.getElementById("phone-display").textContent = phoneInput;
+        }
+
+        function addSkill() {
+            var skillInput = document.getElementById("skill-input").value;
+            if (skillInput.trim()=== ""){
+                alert("Please enter a skill");
+                return;
+            }
+
+            var ul = document.getElementById("skills-list");
+            var li = document.createElement("li");
+            li.textContent = skillInput;
+
+            ul.appendChild(li);
+
+            document.getElementById("skill-input").value  = "";
+        }
+
+        function toggleExperience(index){
+            var experienceContent = document.getElementById("experience-" + index);
+            var button = document.getElementById("toggle-button-"+ index);
+
+            if(experienceContent.style.display === "none" || experienceContent.style.display ===""){
+                experienceContent.style.display = "block";
+                button.textContext = "Hide experience";
+
+            } else {
+                experienceContent.style.display  = "none";
+                button.textContent = "Show Experience";
+            }
+        }
+
+       function changeBackgroundColor(){
+        let color = document.getElementById("background").value;
+
+        document.body.style.backgroundColor = color;
+       }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="item">
+            <h1>Emily Arroyo</h1>
+            <br><p>Web Design</p>
+
+            <label for="background"> Enter s color:</label>
+            <input type="text" id="background" placeholder="Enter a color">
+            <button onclick="changeBackgroundColor()">Change background color</button>
+        </div>
+
+        <div class="item">
+            <h2>Contacto</h2>
+            <p> Phone: <span id= "phone-display">939-729-9526 </span></p>
+           <p> Email: <span id="email-display"> earroyo1921@gmail.com </span></p>
+            <p><a href="https://www.linkedin.com/in/emily-arroyo-267871253" target="_blank">Perfil Linkedin</a>
+            </p>
+        
+            <label for="phone-input">Enter New Phone Number:</label>
+            <input type="text" id="phone-input" placeholder="Enter new phone number">
+            <br>
+            <label for="email-input">Enter New Email:</label>
+            <input type="text" id="email-input" placeholder="Enter new email">
+            <br>
+
+            <button onclick="updateContactInfo()">Update Contact Info</button>
+        </div>
+        </div>
+
+
+        <div class="flex-container">
+            <div class="item">
+            <h3>Perfil Profesional</h3>
+            <p>Estudiante recién graduada de Bachillerato en Administración de Empresas con concentración en Sistemas de Información. Con una sólida formación en programación, base de datos y análisis de sistemas. Proactiva con disposición a aprender y adaptarme rápidamente a nuevos entornos. Con habilidades de liderazgo y una fuerte capacidad para colaborar en equipo. Motivada para aplicar mis conocimientos en un entorno profesional. Actualmente, en busca de oportunidades de empleo que me permitan expandir mis habilidades y adquirir experiencia práctica en el campo. </p> <br> <h3>Formacion</h3><ol>
+            <li>Bachillerato en Aministracion de Empresas con Concentracion en Sistemas de Informacion, Universidad Ana G Mendez, Gurabo PR, 00778</li> <br>
+            <li> Cuarto Año, Seymour High School, Seymour Indiana, 47274</li>
+        </ol> </div>
+
+        <div class="item">
+        <br>
+         <h3> Experiencia</h3>
+
+         <div>
+            <button id="toggle-buttton-1" onclick="toggleExperience(1)">Show Experience</button>
+            <div id="experience-1" style="display:none;">
+          <ul>
+            <li>Estudio y Trabajo <br>
+                Universidad Ana G Mendez, Gurabo PR, 00778 <br>
+                Aug-Dic 2024
+            </li>
+            </ul>
+         </div>
+         </div>
+
+         <br>
+
+         <div>
+            <button id="toggle-buttton-2" onclick="toggleExperience(2)">Show Experience</button>
+            <div id="experience-2" style="display:none;">
+                <ul>
+            <li> Internado Americorps <br>
+            Universidad Ana G Mendez, Gurabo PR, 00778 <br>
+            Feb-Jun 2024 </li>
+        </ul> 
+     </div>
+     </div>
+    </div>  
+</div> 
+
+      <div class="container">
+        <div class="item">
+            <h3>Competencias</h3>
+            <ul id="skills-list">
+            <li> Microsoft Office</li>
+            <li>HTML</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>Canva</li>
+            <li>SQL</li>
+        </ul> <br> 
+        
+        <label for="skill-input">Add new skill:</label>
+        <input type="text" id="skill-input" placeholder="Enter a new skill">
+        <button onclick="addSkill()"> Add Skill</button>
+        <footer> Referencias disponibles bajo sugerencia </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Background Color</title>
+</head>
+<body>
+
+  <h1>Change Background Color</h1>
+
+  <!-- Input for new task -->
+  <input type="text" id="background" placeholder="Enter a color">
+  
+  <!-- Button to trigger the text color change -->
+  <button onclick="changeBackgroundColor()">Change Background Color</button>
+
+  <script>
+    // Function to change the text color of the paragraph
+    function changeBackgroundColor() {
+      // Get the paragraph element by its ID
+      let color = document.getElementById("background").value;
+      
+      // Change the color of the text
+      document.body.style.backgroundColor = color; // Change to blue color
+    }
+  </script>
+
+</body>
+</html>
